@@ -12,7 +12,8 @@ class Login extends Component {
     };
   }
   login(e) {
-    e.preventDefault();
+    if(e)
+      e.preventDefault();
     fire
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
