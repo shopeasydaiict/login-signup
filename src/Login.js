@@ -22,6 +22,7 @@ class Login extends Component {
       })
       .catch((err) => {
         console.log(err);
+        alert(err.message);
       });
   }
   handleChange(e) {
@@ -39,6 +40,7 @@ class Login extends Component {
       })
       .catch((err) => {
         console.log(err);
+        alert(err.message);
       });
   }
 
@@ -59,7 +61,7 @@ class Login extends Component {
             type="email"
             id="email"
             name="email"
-            /*placeholder="Enter Email address"*/
+            placeholder="Enter Email Address"
             onChange={this.handleChange}
             value={this.state.email}
           />
@@ -69,7 +71,7 @@ class Login extends Component {
             type="password"
             id="password"
             name="password"
-            /*placeholder="Enter password"*/
+            placeholder="Enter password : Min length 6 charaacters"
             onChange={this.handleChange}
             value={this.state.password}
           />

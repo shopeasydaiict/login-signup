@@ -30,6 +30,5 @@ class App extends Component {
     );
   }
 }
-//const Login = () => <div className="login-container" />;
 
 export default App;
