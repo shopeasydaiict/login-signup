@@ -8,6 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       user: {},
+      isLogin: false,
     };
   }
   componentDidMount() {
@@ -16,12 +17,17 @@ class App extends Component {
   authLister() {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
-        this.setState({ user });
-      } else this.setState({ user: null });
+        this.setState({ user: user, isLogin: true });
+      } else this.setState({ user: null, isLogin: false });
     });
   }
   render() {
-    return <div className="App">{this.state.user ? <Home /> : <Login />}</div>;
+    return (
+      <div className="App">
+        {this.state.user ? <Home /> : <Login />}
+        {console.log(this.state.isLogin)}
+      </div>
+    );
   }
 }
 //const Login = () => <div className="login-container" />;

@@ -13,8 +13,7 @@ class Login extends Component {
     };
   }
   login(e) {
-    if(e)
-      e.preventDefault();
+    if (e) e.preventDefault();
     fire
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
@@ -45,13 +44,18 @@ class Login extends Component {
 
   render() {
     return (
-      <div class="body">
+      <div className="body">
         <a href="https://www.google.co.ins/">
-          <img border="" alt="ShopEasy" src={require('./resources/shopeasy_logo.png')} ></img>
+          <img
+            border=""
+            alt="ShopEasy"
+            src={require("./resources/shopeasy_logo.png")}
+          ></img>
         </a>
-        <form class="form-container">
-          <h2 class="email-lable">E-MAIL:</h2>
-          <input class="email-box"
+        <form className="form-container">
+          <h2 className="email-lable">E-MAIL:</h2>
+          <input
+            className="email-box"
             type="email"
             id="email"
             name="email"
@@ -59,8 +63,9 @@ class Login extends Component {
             onChange={this.handleChange}
             value={this.state.email}
           />
-          <h2 class="pass-lable">PASSWORD:</h2>
-          <input class="pass-box"
+          <h2 className="pass-lable">PASSWORD:</h2>
+          <input
+            className="pass-box"
             type="password"
             id="password"
             name="password"
@@ -68,10 +73,13 @@ class Login extends Component {
             onChange={this.handleChange}
             value={this.state.password}
           />
-          <button onClick={this.login} class="bt-login">LOGIN</button>
-          <button onClick={this.signup} class="bt-signup">SIGNUP</button>
+          <button onClick={this.login} className="bt-login">
+            LOGIN
+          </button>
+          <button onClick={this.signup} className="bt-signup">
+            SIGNUP
+          </button>
         </form>
-        
       </div>
     );
   }
