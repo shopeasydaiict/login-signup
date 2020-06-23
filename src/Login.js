@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./login.css";
 import fire from "./config/fire";
 class Login extends Component {
   constructor(props) {
@@ -44,27 +45,33 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <form>
-          <input
+      <div class="body">
+        <a href="https://www.google.co.ins/">
+          <img border="" alt="ShopEasy" src={require('./resources/shopeasy_logo.png')} ></img>
+        </a>
+        <form class="form-container">
+          <h2 class="email-lable">E-MAIL:</h2>
+          <input class="email-box"
             type="email"
             id="email"
             name="email"
-            placeholder="Enter Email address"
+            /*placeholder="Enter Email address"*/
             onChange={this.handleChange}
             value={this.state.email}
           />
-          <input
+          <h2 class="pass-lable">PASSWORD:</h2>
+          <input class="pass-box"
             type="password"
             id="password"
             name="password"
-            placeholder="Enter password"
+            /*placeholder="Enter password"*/
             onChange={this.handleChange}
             value={this.state.password}
           />
-          <button onClick={this.login}>Login</button>
-          <button onClick={this.signup}>Signup</button>
+          <button onClick={this.login} class="bt-login">LOGIN</button>
+          <button onClick={this.signup} class="bt-signup">SIGNUP</button>
         </form>
+        
       </div>
     );
   }
