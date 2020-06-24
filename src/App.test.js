@@ -62,8 +62,7 @@ it('Invalid password with empty string',() =>{
 describe('Test case for testing login',() =>{
 let wrapper;
 let wrapper2;
-test('username check',()=>
-{
+test('username check',()=>{
 wrapper = shallow(<Login/>);
 wrapper.find('input[type="email"]').simulate('change', {target: {name: 'email', value: 'hunnybalani26@gmail.com'}});
 expect(wrapper.state('email')).toEqual('hunnybalani26@gmail.com');
@@ -72,6 +71,13 @@ it('password check',()=>{
 wrapper = shallow(<Login/>);
 wrapper.find('input[type="password"]').simulate('change', {target: {name: 'password', value: 'Chotumotu@17'}});
 expect(wrapper.state('password')).toEqual('Chotumotu@17');
+})
+it('input only email and no password',()=>{
+wrapper = shallow(<Login/>);
+wrapper.find('input[type="email"]').simulate('change', {target: {name: 'email', value: 'hunnybalani26@gmail.com'}});
+wrapper.find('input[type="password"]').simulate('change', {target: {name: 'password', value: ''}});
+wrapper.find('button').at(0).simulate('click');
+expect(wrapper2.state('isLogin')).toBe(false);
 })
 it('login check with right data',()=>{
 wrapper = shallow(<Login/>);
