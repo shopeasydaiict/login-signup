@@ -94,7 +94,7 @@ img {
         font-family: 'Roboto', sans-serif;
         background-color: #232F3E;
         display: grid;
-        grid-template-columns: 150% 0;
+        grid-template-columns: 155% 0;
         grid-template-areas:"logo form";
         width: 150%;
         margin: -5em -0 0 -8em;
@@ -102,17 +102,19 @@ img {
     a {
         grid-column: 1 / 1;
         width: 70%;
-        margin: 0 3em;
+        margin: 0 4.5em;
     }
     .form-container {
         grid-column: 1 / 1;   
         width: 100%;
     }
     .bt-signup {
-        margin: 2em 5em 0;
+        margin: 2em 1em 0;
         display: block;
+        width: 100%;
     }
     .bt-login {
-        margin: 2em 5em 0;
+        margin: 2em 1em 0;
+        width: 100%;
     }
 }
